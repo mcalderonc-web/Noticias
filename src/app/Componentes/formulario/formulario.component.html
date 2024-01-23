@@ -1,0 +1,26 @@
+<div class= "jumbotron mt-5">   
+    <h2 class="heading">
+        Filtro por Pais y Categoria 
+    </h2>
+    <div class="row">
+        <div class = "col-lg-8 offset lg-2">
+            <form (ngSubmit)="buscarnoticia()">  
+                <div class="form-group">
+                    <label for="exampleSelect1" class="form-label mt-4">Categoria</label>
+                    <select class="form-select" name="Categoria" [(ngModel)]="categoriaseleccionada">; 
+                        // el hecho de que asignemos a [value el vaor que se seleciona hace que categoriaseleccionada se actualice con el valor que se eligio
+                      <option *ngFor="let selcategoria of categorias" [value]="selcategoria.valor"> {{selcategoria.nombre}} </option>                      
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleSelect1" class="form-label mt-4">Paises</label>
+                    <select class="form-select" name="Paises" [(ngModel)]="paisseleccionado">;
+                        <option *ngFor="let selpais of paises" [value]="selpais.valor"> {{selpais.nombre}}</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary btn-block btn-lg mt-5" type = "Submit" >Buscar</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
